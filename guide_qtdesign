@@ -1,0 +1,103 @@
+Qt Designer là công cụ kéo-thả trực quan giúp bạn thiết kế giao diện đồ họa (GUI) cho ứng dụng PyQt. Dưới đây là các bước để tạo giao diện bằng Qt Designer và sử dụng nó trong PyQt6:
+
+Bước 1: Cài đặt Qt Designer
+Nếu bạn chưa có Qt Designer, hãy cài đặt nó thông qua PyQt6:
+
+sh
+Sao chép
+Chỉnh sửa
+pip install PyQt6 PyQt6-tools
+Sau khi cài đặt, bạn có thể mở Qt Designer bằng lệnh:
+
+sh
+Sao chép
+Chỉnh sửa
+python -m PyQt6.QtDesigner
+Hoặc trên Windows, Qt Designer thường nằm trong thư mục:
+
+php-template
+Sao chép
+Chỉnh sửa
+C:\Users\<username>\AppData\Local\Programs\Python\Python<version>\Lib\site-packages\qt6_applications\Qt\bin\designer.exe
+Bước 2: Tạo Giao Diện Mới
+Mở Qt Designer.
+
+Chọn loại giao diện mong muốn, thường là Main Window hoặc Dialog.
+
+Thiết kế giao diện bằng cách kéo thả các widget từ thanh công cụ bên trái vào cửa sổ chính.
+
+Bước 3: Tùy Chỉnh Widget
+Chỉnh sửa thuộc tính: Chọn widget và chỉnh các thuộc tính trong Property Editor (bên phải).
+
+Sử dụng Layout: Chọn các widget và nhấn Lay out Vertically (Ctrl+L) hoặc Lay out in a Grid để đảm bảo giao diện co giãn tốt.
+
+Bước 4: Lưu File .ui
+Nhấn File > Save As... và lưu tệp dưới dạng .ui (ví dụ: main_window.ui).
+
+Bước 5: Chuyển File .ui Thành Python
+Có 2 cách để sử dụng file .ui trong PyQt6:
+
+Cách 1: Chuyển đổi file .ui sang file .py
+Sử dụng lệnh sau để chuyển file .ui thành file Python:
+
+sh
+Sao chép
+Chỉnh sửa
+pyuic6 -o main_window.py main_window.ui
+Sau đó, bạn có thể sử dụng file main_window.py trong code chính.
+
+Cách 2: Load trực tiếp file .ui
+Bạn có thể load file .ui mà không cần chuyển đổi bằng cách sử dụng QUiLoader:
+
+python
+Sao chép
+Chỉnh sửa
+from PyQt6 import QtWidgets, uic
+import sys
+
+class MyApp(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("main_window.ui", self)  # Load file .ui
+
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    window = MyApp()
+    window.show()
+    sys.exit(app.exec())
+Bước 6: Thêm Chức Năng Cho Giao Diện
+Sau khi tạo GUI, bạn có thể thêm chức năng bằng cách kết nối các sự kiện (event) vào code:
+
+python
+Sao chép
+Chỉnh sửa
+from PyQt6 import QtWidgets, uic
+
+class MyApp(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("main_window.ui", self)
+
+        # Kết nối nút bấm với sự kiện
+        self.pushButton.clicked.connect(self.on_button_click)
+
+    def on_button_click(self):
+        self.label.setText("Nút đã được bấm!")
+
+app = QtWidgets.QApplication([])
+window = MyApp()
+window.show()
+app.exec()
+Bước 7: Chạy Ứng Dụng
+Chạy file Python để mở ứng dụng với giao diện đã thiết kế.
+
+sh
+Sao chép
+Chỉnh sửa
+python main.py
+Tóm tắt nhanh
+✅ Thiết kế giao diện bằng Qt Designer.
+✅ Lưu file .ui.
+✅ Chuyển file .ui sang .py hoặc load trực tiếp trong code.
+✅ Viết code xử lý sự kiện cho các widget.
+✅ Chạy ứng dụng để kiểm tra giao diện.
