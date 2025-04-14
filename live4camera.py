@@ -10,7 +10,7 @@ CAMERA_IDS = [0, 1, 2, 3]
 
 
 class CameraThread(QThread):
-    frame_captured = pyqtSignal(np.ndarray, int)
+    frame_captured = pyqtSignal(np.ndarray, int) # Tín hiệu truyền ảnh và ID camera
 
     def __init__(self, camera_id):
         super().__init__()
@@ -22,7 +22,7 @@ class CameraThread(QThread):
         while self.running:
             ret, frame = self.cap.read()
             if ret:
-                self.frame_captured.emit(frame, self.camera_id)
+                self.frame_captured.emit(frame, self.camera_id)  # Phát tín hiệu
 
     def stop(self):
         self.running = False
@@ -47,7 +47,7 @@ class MainWindow(QWidget):
             layout.addWidget(label)
 
             thread = CameraThread(cam_id)
-            thread.frame_captured.connect(self.update_frame)
+            thread.frame_captured.connect(self.update_frame) #Kết nối tín hiệu frame_captured của CameraThread với phương thức self.update_frame để xử lý và hiển thị hình ảnh.
             thread.start()
             self.threads[cam_id] = thread
 
