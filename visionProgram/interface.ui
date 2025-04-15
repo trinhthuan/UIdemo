@@ -55,6 +55,14 @@
 	border-radius: 10px;
 }
 
+QPushButton:hover {
+    border: 2px solid #fff;    /* Darker border on hover */
+}
+
+QPushButton:pressed {
+    border: 2px solid #2980b9;    /* Darker border on hover */
+}
+
 </string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -377,7 +385,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="autoTab">
           <attribute name="title">
@@ -1036,7 +1044,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_20">
                    <property name="text">
-                    <string>Exposure</string>
+                    <string>. Exposure</string>
                    </property>
                   </widget>
                  </item>
@@ -1056,7 +1064,7 @@
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_22">
                    <property name="text">
-                    <string>Light</string>
+                    <string>. Light level</string>
                    </property>
                   </widget>
                  </item>
@@ -1165,19 +1173,19 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <property name="spacing">
-           <number>7</number>
+           <number>2</number>
           </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="rightMargin">
            <number>0</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>2</number>
           </property>
           <item>
            <widget class="QPushButton" name="autoTabBtn">
