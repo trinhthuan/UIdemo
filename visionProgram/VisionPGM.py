@@ -1,6 +1,7 @@
 import sys
 import os
 from PySide6.QtWidgets import QMainWindow, QApplication, QFileDialog
+from PySide6.QtCore import Qt
 
 from interface_ui import *
 
@@ -12,7 +13,13 @@ from serial_port import SerialPort
 #import config_manager file
 from config_manager import ConfigManager
 
+import cv2
+from ultralytics import YOLO
+from camera_control import CameraThread
+from AI_yolo_process import YoloThread
 
+
+model = YOLO(r"D:\Python\datatrain_thuan\pythonProject\runs\detect\train\weights\best.pt")
 
 
 class MainWindow(QMainWindow):
@@ -37,6 +44,17 @@ class MainWindow(QMainWindow):
 
         self.toggle_connection()
 
+        # Khởi tạo camera thread
+        # self.camera_thread = CameraThread(camera_id=0)
+        # self.camera_thread.frame_ready.connect(self.update_image)
+
+        self.camera_thread = CameraThread(camera_id=0)   #Cam start
+        self.camera_thread.frame_ready.connect(self.handle_raw_frame) #Nhận frame từ luồng camera gọi xử lý(gọi luồng AI)
+
+        self.yolo_thread = YoloThread(model) #luồng AI process
+        self.yolo_thread.result_ready.connect(self.handle_yolo_result) # sau khi xử lý sẽ trả kết quả v luồng chính
+
+
         #Tab data, load file
         self.folder_mdl_path = self.config.get("model_file") # Biến lưu path folder được chọn
         self.ui.modelFileLine.setText(self.folder_mdl_path)
@@ -54,7 +72,13 @@ class MainWindow(QMainWindow):
         self.ui.dataTabBtn.clicked.connect(self.switch_to_tab_data)
         self.ui.settingTabBtn.clicked.connect(self.switch_to_tab_setting)
 
+        self.ui.manualBtn.clicked.connect(self.start_live)
+        self.ui.uploadBtn.clicked.connect(self.stop_live)
 
+    def stop_live(self):
+        self.camera_thread.stop()
+    def start_live(self):
+        self.camera_thread.start()
     def switch_to_tab_setting(self):
         self.ui.tabWidget.setCurrentIndex(2)  # Chuyển sang Tab 3
 
@@ -111,6 +135,36 @@ class MainWindow(QMainWindow):
         if line:
             self.ui.textBrowser.append(line)
 
+    # Khi nhận frame từ camera
+    def handle_raw_frame(self, frame):
+        if not self.yolo_thread.isRunning():
+            self.yolo_thread.start()
+        self.yolo_thread.set_frame(frame)
+
+    # Khi nhận frame sau YOLO
+    def handle_yolo_result(self, frame):
+        self.update_image(frame)
+
+    def update_image(self, frame):
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        h, w, ch = frame.shape
+        bytes_per_line = ch * w
+        q_img = QImage(frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
+        pixmap = QPixmap.fromImage(q_img)
+
+        self.ui.viewSettingLabel.setPixmap(pixmap)
+        self.ui.image1Label.setPixmap(pixmap)
+        self.ui.image2Label.setPixmap(pixmap)
+        self.ui.image3Label.setPixmap(pixmap)
+        self.ui.image4Label.setPixmap(pixmap)
+
+
+
+    def closeEvent(self, event):
+        self.camera_thread.stop()
+        self.yolo_thread.stop()
+        super().closeEvent(event)
+
 
 
 
@@ -125,8 +179,8 @@ if __name__ == "__main__":
 
 
 '''
-(.venv) PS D:\Python\GiaoDienSample> cd D:\Python\GiaoDienSample\dashboard
-(.venv) PS D:\Python\GiaoDienSample\dashboard> pyside6-uic interface.ui -o interface.py
+(.venv) PS D:\Python\GiaoDienSample> cd D:\Python\GiaoDienSample\visionProgram
+(.venv) PS D:\Python\GiaoDienSample\dashboard> pyside6-uic interface.ui -o interface_ui.py
 (.venv) PS D:\Python\GiaoDienSample\dashboard> pyside6-rcc resources.qrc -o resources_rc.py
 
 ##QCustom

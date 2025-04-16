@@ -1,5 +1,5 @@
 {
     "model_file": "D:/Python/GiaoDienSample/visionProgram/assets",
     "feature_file": "D:/Python/GiaoDienSample/visionProgram/interface.ui",
-    "serial_port": "COM21"
+    "serial_port": "COM20"
 }

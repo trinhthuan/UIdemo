@@ -360,26 +360,38 @@ class Ui_MainWindow(object):
         self.runningData.setObjectName(u"runningData")
         self.gridLayout_3 = QGridLayout(self.runningData)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.label_7 = QLabel(self.runningData)
-        self.label_7.setObjectName(u"label_7")
+        self.image1Label = QLabel(self.runningData)
+        self.image1Label.setObjectName(u"image1Label")
+        sizePolicy1.setHeightForWidth(self.image1Label.sizePolicy().hasHeightForWidth())
+        self.image1Label.setSizePolicy(sizePolicy1)
+        self.image1Label.setScaledContents(True)
 
-        self.gridLayout_3.addWidget(self.label_7, 0, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.image1Label, 0, 1, 1, 1)
 
-        self.label_13 = QLabel(self.runningData)
-        self.label_13.setObjectName(u"label_13")
+        self.image2Label = QLabel(self.runningData)
+        self.image2Label.setObjectName(u"image2Label")
+        sizePolicy1.setHeightForWidth(self.image2Label.sizePolicy().hasHeightForWidth())
+        self.image2Label.setSizePolicy(sizePolicy1)
+        self.image2Label.setScaledContents(True)
 
-        self.gridLayout_3.addWidget(self.label_13, 0, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.image2Label, 0, 3, 1, 1)
 
-        self.label_9 = QLabel(self.runningData)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
+        self.image3Label = QLabel(self.runningData)
+        self.image3Label.setObjectName(u"image3Label")
+        sizePolicy1.setHeightForWidth(self.image3Label.sizePolicy().hasHeightForWidth())
+        self.image3Label.setSizePolicy(sizePolicy1)
+        self.image3Label.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
+        self.image3Label.setScaledContents(True)
 
-        self.gridLayout_3.addWidget(self.label_9, 1, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.image3Label, 1, 1, 1, 1)
 
-        self.label_11 = QLabel(self.runningData)
-        self.label_11.setObjectName(u"label_11")
+        self.image4Label = QLabel(self.runningData)
+        self.image4Label.setObjectName(u"image4Label")
+        sizePolicy1.setHeightForWidth(self.image4Label.sizePolicy().hasHeightForWidth())
+        self.image4Label.setSizePolicy(sizePolicy1)
+        self.image4Label.setScaledContents(True)
 
-        self.gridLayout_3.addWidget(self.label_11, 1, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.image4Label, 1, 3, 1, 1)
 
 
         self.horizontalLayout_6.addWidget(self.runningData)
@@ -537,12 +549,18 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.viewSetting.sizePolicy().hasHeightForWidth())
         self.viewSetting.setSizePolicy(sizePolicy4)
-        self.horizontalLayout_10 = QHBoxLayout(self.viewSetting)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.gridLayout_7 = QGridLayout(self.viewSetting)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.viewSettingLabel = QLabel(self.viewSetting)
         self.viewSettingLabel.setObjectName(u"viewSettingLabel")
+        sizePolicy1.setHeightForWidth(self.viewSettingLabel.sizePolicy().hasHeightForWidth())
+        self.viewSettingLabel.setSizePolicy(sizePolicy1)
+        self.viewSettingLabel.setMinimumSize(QSize(0, 0))
+        self.viewSettingLabel.setMaximumSize(QSize(100000, 99997))
+        self.viewSettingLabel.setPixmap(QPixmap(u":/blueIcon/assets/icons/blue/activity.svg"))
+        self.viewSettingLabel.setScaledContents(True)
 
-        self.horizontalLayout_10.addWidget(self.viewSettingLabel)
+        self.gridLayout_7.addWidget(self.viewSettingLabel, 0, 0, 1, 1)
 
 
         self.horizontalLayout_9.addWidget(self.viewSetting)
@@ -708,7 +726,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -732,10 +750,10 @@ class Ui_MainWindow(object):
         self.label_10.setText(QCoreApplication.translate("MainWindow", u". Fail rate", None))
         self.rateLabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u25a0 Detailed Log____________________", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.image1Label.setText("")
+        self.image2Label.setText("")
+        self.image3Label.setText("")
+        self.image4Label.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.autoTab), QCoreApplication.translate("MainWindow", u"Auto", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u25a0 Select Model file", None))
         self.selectModelBtn.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
@@ -747,7 +765,7 @@ class Ui_MainWindow(object):
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u2022 Camera ID of TOP", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u2022 Serial COM no.", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.dataTab), QCoreApplication.translate("MainWindow", u"Data", None))
-        self.viewSettingLabel.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.viewSettingLabel.setText("")
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u25a0 Adjustment", None))
         self.exposSaveBtn.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u". Exposure", None))
