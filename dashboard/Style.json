@@ -1,0 +1,133 @@
+{
+  "QCard": [
+    {
+      "cards": [
+        "card1",
+        "card2",
+        "card3",
+        "card4"
+      ],
+      "shadow": [
+        {
+          "color": "#5F5F5F",
+          "blurRadius": 10,
+          "xOffset": 3,
+          "yOffset": 3
+        }
+      ]
+    },
+    {
+      "cards": [
+        "widget_4",
+        "widget_5"
+      ],
+      "shadow": [
+        {
+          "color": "#5F5F5F",
+          "blurRadius": 10,
+          "xOffset": 3,
+          "yOffset": 3
+        }
+      ]
+    },
+    {
+      "cards": [
+        "headerFrame"
+      ],
+      "shadow": [
+        {
+          "color": "#5F5F5F",
+          "blurRadius": 10,
+          "xOffset": 3,
+          "yOffset": 3
+        }
+      ]
+    }
+  ],
+  "QCustomSlideMenu": [
+    {
+      "name": "leftMenu",
+      "defaultSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "collapsedSize": [
+        {
+          "width": 0,
+          "height": "parent"
+        }
+      ],
+      "expandedSize": [
+        {
+          "width": 215,
+          "height": "parent"
+        }
+      ],
+      "toggleButton": [
+        {
+          "buttonName": "menuBtn",
+          "icons": [
+            {
+               "whenMenuIsCollapsed": "D:\\Python\\GiaoDienSample\\dashboard\\assets\\icons\\blueIcon\\menu.svg" ,
+               "whenMenuIsExpanded": "D:\\Python\\GiaoDienSample\\dashboard\\assets\\icons\\blueIcon\\chevron-left.svg"
+            }
+          ]
+        }
+      ],
+      "menuTransitionAnimation": [
+        {
+          "animationDuration": 1000,
+          "animationEasingCurve": "OutBack"
+        }
+      ]
+    },
+    {
+      "name": "profileCont",
+      "defaultSize": [
+        {
+          "width": 0,
+          "height": 0
+        }
+      ],
+      "collapsedSize": [
+        {
+          "width": 0,
+          "height": 0
+        }
+      ],
+      "expandedSize": [
+        {
+          "width": 100,
+          "height": "180"
+        }
+      ],
+      "toggleButton": [
+        {
+          "buttonName": "accountBtn"
+        }
+      ],
+      "menuTransitionAnimation": [
+        {
+          "animationDuration": 1000,
+          "animationEasingCurve": "OutBack"
+        }
+      ],
+      "floatPosition": [
+        {
+          "relativeTo": "mainBody",
+          "position": "center-right",
+          "shadow": [
+            {
+              "color": "#000",
+              "blurRadius": 20,
+              "xOffset": 0,
+              "yOffset": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

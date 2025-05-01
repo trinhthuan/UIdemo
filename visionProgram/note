@@ -1,0 +1,59 @@
+'''
+cd D:\Python\GiaoDienSample\visionProgram
+pyside6-uic interface.ui -o interface_ui.py
+pyside6-rcc resources.qrc -o resources_rc.py
+
+##QCustom
+https://pypi.org/project/QT-PyQt-PySide-Custom-Widgets/
+
+##JSON Style
+https://khamisikibet.github.io/Docs-QT-PyQt-PySide-Custom-Widgets/docs/widgets/custom-slide-menu-widgets
+'''
+
+
+
+✅ Tóm tắt quy trình mong muốn:
+1. YOLO luôn bật để phát hiện đối tượng → nếu chưa phát hiện thì cứ tiếp tục.
+    Khi YOLO phát hiện đối tượng:
+2. Ngừng detect tạm thời.
+    Gửi ảnh cho kiểm tra tác vụ khác (ví dụ đo kích thước, đọc mã, kiểm tra lỗi...).
+    Hiển thị kết quả kiểm tra lên giao diện.
+    Khi vật thể được lấy ra (YOLO không còn detect):
+3. Khởi động lại chu trình từ đầu (bật lại YOLO detect).
+
+Các phần chính:
+CameraThread: liên tục gửi frame.
+
+YoloThread: nhận frame, detect, phát hiện thì emit tín hiệu.
+
+TaskThread: xử lý các tác vụ khác (nếu có).
+
+MainWindow: kiểm soát toàn bộ quy trình.
+
+✅ Kiến trúc đề xuất:
+1. Tách logic thành các lớp/phần rõ ràng:
+DUTWidget: Giao diện, giao tiếp với QStateMachine
+DUTController: Điều khiển logic chính (trạng thái, camera)
+QStateMachine: Quản lý trạng thái: Idle → Detecting → Processing → Done
+Signals & Slots: Dùng để kết nối các phần với nhau
+
+
+┌────────┐      detect_start()     ┌────────────┐
+│  Idle  │ ─────────────────────→ │ Detecting  │
+└────────┘                         └────────────┘
+                                     │
+                          object_detected()│
+                                     ▼
+                              ┌────────────┐
+                              │ Processing │
+                              └────────────┘
+                                     │
+                                task_done()
+                                     ▼
+                                 ┌──────┐
+                                 │ Done │
+                                 └──────┘
+                                     │
+                                reset()
+                                     ▼
+                                   Idle

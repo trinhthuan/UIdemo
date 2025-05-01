@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1047</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>247</green>
+        <blue>247</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>160</red>
+        <green>160</green>
+        <blue>160</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>247</green>
+        <blue>247</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="128">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>247</green>
+        <blue>247</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>160</red>
+        <green>160</green>
+        <blue>160</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>247</green>
+        <blue>247</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="128">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="WindowText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Light">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Midlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>247</red>
+        <green>247</green>
+        <blue>247</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Dark">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Mid">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>160</red>
+        <green>160</green>
+        <blue>160</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Text">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="BrightText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ButtonText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>120</red>
+        <green>120</green>
+        <blue>120</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>240</red>
+        <green>240</green>
+        <blue>240</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>220</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="128">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tab_data">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Testing</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1" rowspan="3">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="image_view">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 16px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 0px;                /* Khoảng cách nội dung */
+    border: 1px solid gray;      /* Viền 2px màu đen */
+    border-radius: 5px;          /* Bo góc viền 5px */
+}
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="status">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: Regular;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 5px;                /* Khoảng cách nội dung */
+    border: 1px 1x solid gray;      /* Viền 2px màu xám */
+    border-radius: 5px;          /* Bo góc viền 5px */
+}</string>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_5"/>
+        </item>
+        <item row="2" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>50</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: rgb(48, 100, 255); /* Màu nền xanh lá */
+    color: white;                /* Chữ màu trắng */
+    font-size: 14px;             /* Cỡ chữ 14px */
+    padding: 10px 20px;          /* Padding trên/dưới 10px, trái/phải 20px */
+    border-radius: 5px;          /* Bo tròn góc 5px */
+    border: none;                /* Loại bỏ viền */
+    cursor: pointer;             /* Con trỏ chuột thành dạng bấm */
+}
+
+QPushButton:hover {
+    background-color:  rgba(0, 0, 127,0.5);    /* Màu nền thay đổi khi di chuột vào */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Start</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color: rgb(48, 100, 255); /* Màu nền xanh lá */
+    color: white;                /* Chữ màu trắng */
+    font-size: 14px;             /* Cỡ chữ 14px */
+    padding: 10px 20px;          /* Padding trên/dưới 10px, trái/phải 20px */
+    border-radius: 5px;          /* Bo tròn góc 5px */
+    border: none;                /* Loại bỏ viền */
+    cursor: pointer;             /* Con trỏ chuột thành dạng bấm */
+}
+
+QPushButton:hover {
+    background-color:  rgba(0, 0, 127,0.5);    /* Màu nền thay đổi khi di chuột vào */
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QFrame" name="formFrame">
+          <layout class="QGridLayout" name="gridLayout_2">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <property name="topMargin">
+            <number>46</number>
+           </property>
+           <property name="bottomMargin">
+            <number>58</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+    /*border: 1px solid gray;      /* Viền 2px màu đen */
+    /*border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>Result:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>Fail rate:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>Test Time:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Data</string>
+       </attribute>
+       <widget class="QPushButton" name="change_model_file">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Model file</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="change_ai_model">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>AI model</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="change_feature_file">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>220</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Feature file</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="model_ver">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>67</y>
+          <width>531</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+    /*border: 1px solid gray;      /* Viền 2px màu đen */
+    /*border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="ai_ver">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>150</y>
+          <width>531</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+    /*border: 1px solid gray;      /* Viền 2px màu đen */
+    /*border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="feature_ver">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>230</y>
+          <width>531</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+    /*border: 1px solid gray;      /* Viền 2px màu đen */
+    /*border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Setting</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QFrame" name="formFrame_2">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <property name="topMargin">
+            <number>46</number>
+           </property>
+           <property name="bottomMargin">
+            <number>58</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="ex">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+    /*border: 1px solid gray;      /* Viền 2px màu đen */
+    /*border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>Exposure:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="exposure_txt">
+             <property name="styleSheet">
+              <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 14px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 10px;                /* Khoảng cách nội dung */
+   /* border: 1px solid gray;      /* Viền 2px màu đen */
+   /* border-radius: 5px;          /* Bo góc viền 5px */
+	border-top: none;   /* Viền trên */
+    border-right: none;           /* Không có viền phải */
+    border-bottom:1px solid gray;         /* Không có viền dưới */
+    border-left: none;            /* Không có viền trái */
+}</string>
+             </property>
+             <property name="text">
+              <string>value</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QSlider" name="exposure_slider">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_9">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Get </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1" colspan="2">
+            <widget class="QPushButton" name="pushButton_10">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Set value</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="image_view_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: #333;                 /* Màu chữ */
+    font-size: 16px;             /* Cỡ chữ */
+    font-weight: bold;           /* Đậm chữ */
+    background-color: transparent; /* Nền trong suốt */
+    padding: 0px;                /* Khoảng cách nội dung */
+    border: 1px solid gray;      /* Viền 2px màu đen */
+    border-radius: 5px;          /* Bo góc viền 5px */
+}
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QFrame" name="verticalFrame_5">
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="spacing">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>50</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="pushButton_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Manual Test</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_8">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>9</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_tab_testing">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(48, 100, 255); /* Màu nền xanh lá */
+    color: white;                /* Chữ màu trắng */
+    font-size: 14px;             /* Cỡ chữ 14px */
+    padding: 10px 20px;          /* Padding trên/dưới 10px, trái/phải 20px */
+    border-radius: 5px;          /* Bo tròn góc 5px */
+    border: none;                /* Loại bỏ viền */
+    cursor: pointer;             /* Con trỏ chuột thành dạng bấm */
+}
+
+QPushButton:hover {
+    background-color:  rgba(0, 0, 127,0.5);    /* Màu nền thay đổi khi di chuột vào */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Auto Test</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_tab_data">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>100</horstretch>
+          <verstretch>100</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(48, 100, 255); /* Màu nền xanh lá */
+    color: white;                /* Chữ màu trắng */
+    font-size: 14px;             /* Cỡ chữ 14px */
+    padding: 10px 20px;          /* Padding trên/dưới 10px, trái/phải 20px */
+    border-radius: 5px;          /* Bo tròn góc 5px */
+    border: none;                /* Loại bỏ viền */
+    cursor: pointer;             /* Con trỏ chuột thành dạng bấm */
+}
+
+QPushButton:hover {
+    background-color:  rgba(0, 0, 127,0.5);    /* Màu nền thay đổi khi di chuột vào */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>    Data   </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_tab_setting">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgb(48, 100, 255); /* Màu nền xanh lá */
+    color: white;                /* Chữ màu trắng */
+    font-size: 14px;             /* Cỡ chữ 14px */
+    padding: 10px 20px;          /* Padding trên/dưới 10px, trái/phải 20px */
+    border-radius: 5px;          /* Bo tròn góc 5px */
+    border: none;                /* Loại bỏ viền */
+    cursor: pointer;             /* Con trỏ chuột thành dạng bấm */
+}
+
+QPushButton:hover {
+    background-color:  rgba(0, 0, 127,0.5);    /* Màu nền thay đổi khi di chuột vào */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>  Setting  </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Created by TrinhThuan</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1047</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menud">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionopen_file"/>
+   </widget>
+   <widget class="QMenu" name="menug">
+    <property name="title">
+     <string>About us</string>
+    </property>
+    <widget class="QMenu" name="menuTrinhThuan">
+     <property name="title">
+      <string>TrinhThuan</string>
+     </property>
+     <addaction name="actionTS_part"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="menuTrinhThuan"/>
+   </widget>
+   <addaction name="menud"/>
+   <addaction name="menug"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionopen_file">
+   <property name="text">
+    <string>open file</string>
+   </property>
+  </action>
+  <action name="actionTS_part">
+   <property name="text">
+    <string>TS part</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="bg1.qrc"/>
+ </resources>
+ <connections/>
+</ui>
