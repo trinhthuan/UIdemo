@@ -10,6 +10,8 @@ from PySide6.QtStateMachine import QStateMachine, QState
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QTableWidgetItem
 from my_ui_dut_widget import Ui_Form
 
+from Custom_Widgets.Widgets import *
+
 # camera_worker.py
 from PySide6.QtCore import QObject, Signal
 # import cv2
@@ -110,7 +112,7 @@ class CameraWorker(QObject):
 from PySide6.QtCore import QObject, Signal
 import time
 import cv2
-
+from PySide6.QtSvg import QtSvg
 
 class ProcessorWorker(QObject):
     processing_done = Signal()
@@ -145,7 +147,10 @@ class DUTWidget(QWidget):
     def __init__(self, dut_name: str, camera_id: int):
         super().__init__()
         self.ui = Ui_Form()
+
         self.ui.setupUi(self)
+        # APPLY JSON STYLESHEET
+        loadJsonStyle(self, self.ui)
 
         self.dut_name = dut_name
         self.camera_id = camera_id

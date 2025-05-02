@@ -23,9 +23,6 @@
 	background-color: #EBF7FB;
 }
 
-#logViewTabWidget{
-	background-color: #000;
-}
 
 
 #frame, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6{
@@ -39,8 +36,12 @@
 #viewResultFrame{
 	border: 2px solid #D5EEF7;
 	border-radius: 10px;
-	background-color: #fff;
+	background-color:#ebf7fb;
 
+}
+
+#imageFrame, #logFrame{
+	background-color: #rgb(235, 247, 251);
 }
 
 #dutNameLabel{
@@ -62,12 +63,12 @@ QTextBrowser{
 
 QTabWidget::pane {
     /*border: 1px solid #26eaff;*/
-    background: #ebf7fb;
+    background-color: #ebf7fb;
 	color: rgb(235, 247, 251);
 }
 
 QTabBar::tab {
-    background: #e0e0e0;
+    background-color: #e0e0e0;
    /* border: 1px solid #26eaff;*/
     border-top-left-radius: 8px;
     padding: 3px ;
@@ -81,6 +82,20 @@ QTabBar::tab:selected {
 #tableWidget{
 	background-color: #fff;
 	border-radius: 10px;
+}
+
+#viewHideBtn, #logLabel{
+	background-color: #2596bf;
+	color: #fff;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+    border: 2px solid #fff;    /* Darker border on hover */
+}
+
+QPushButton:pressed {
+    border: 2px solid #2980b9;    /* Darker border on hover */
 }
 
 
@@ -195,13 +210,6 @@ QTabBar::tab:selected {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btn_start">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignTop">
           <widget class="QFrame" name="inspDetailFrame">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -225,8 +233,117 @@ QTabBar::tab:selected {
             <property name="spacing">
              <number>0</number>
             </property>
+            <item row="5" column="1">
+             <widget class="QFrame" name="frame_6">
+              <property name="frameShape">
+               <enum>QFrame::HLine</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="rateLabel">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="margin">
+               <number>2</number>
+              </property>
+              <property name="indent">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
             <item row="0" column="1">
              <widget class="QLabel" name="resultLabel">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="margin">
+               <number>2</number>
+              </property>
+              <property name="indent">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::HLine</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>• Result</string>
+              </property>
+              <property name="margin">
+               <number>2</number>
+              </property>
+              <property name="indent">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QFrame" name="frame_5">
+              <property name="frameShape">
+               <enum>QFrame::HLine</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::HLine</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="tTimeLabel">
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -266,115 +383,6 @@ QTabBar::tab:selected {
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
-             <widget class="QFrame" name="frame_3">
-              <property name="frameShape">
-               <enum>QFrame::HLine</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QLabel" name="rateLabel">
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>TextLabel</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="margin">
-               <number>2</number>
-              </property>
-              <property name="indent">
-               <number>1</number>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QFrame" name="frame">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::HLine</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QFrame" name="frame_2">
-              <property name="frameShape">
-               <enum>QFrame::HLine</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QLabel" name="tTimeLabel">
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>TextLabel</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="margin">
-               <number>2</number>
-              </property>
-              <property name="indent">
-               <number>1</number>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QFrame" name="frame_4">
-              <property name="frameShape">
-               <enum>QFrame::HLine</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>• Result</string>
-              </property>
-              <property name="margin">
-               <number>2</number>
-              </property>
-              <property name="indent">
-               <number>1</number>
-              </property>
-             </widget>
-            </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_8">
               <property name="maximumSize">
@@ -394,8 +402,8 @@ QTabBar::tab:selected {
               </property>
              </widget>
             </item>
-            <item row="5" column="0">
-             <widget class="QFrame" name="frame_5">
+            <item row="1" column="1">
+             <widget class="QFrame" name="frame_2">
               <property name="frameShape">
                <enum>QFrame::HLine</enum>
               </property>
@@ -404,8 +412,8 @@ QTabBar::tab:selected {
               </property>
              </widget>
             </item>
-            <item row="5" column="1">
-             <widget class="QFrame" name="frame_6">
+            <item row="3" column="1">
+             <widget class="QFrame" name="frame_4">
               <property name="frameShape">
                <enum>QFrame::HLine</enum>
               </property>
@@ -445,226 +453,385 @@ QTabBar::tab:selected {
           <number>0</number>
          </property>
          <item alignment="Qt::AlignLeft">
-          <widget class="QTabWidget" name="logViewTabWidget">
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="tabPosition">
-            <enum>QTabWidget::West</enum>
-           </property>
-           <property name="currentIndex">
-            <number>0</number>
-           </property>
-           <widget class="QWidget" name="testResultTab">
-            <attribute name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/blueIcon/assets/icons/blue/grid.svg</normaloff>:/blueIcon/assets/icons/blue/grid.svg</iconset>
-            </attribute>
-            <attribute name="title">
-             <string>Test Result</string>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_13">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QTableWidget" name="tableWidget">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>6</pointsize>
-                </font>
+          <widget class="QCustomSlideMenu" name="logViewHide" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="logFrame">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>0</number>
                </property>
-               <property name="alternatingRowColors">
-                <bool>false</bool>
+               <property name="leftMargin">
+                <number>0</number>
                </property>
-               <property name="columnCount">
-                <number>5</number>
+               <property name="topMargin">
+                <number>0</number>
                </property>
-               <attribute name="horizontalHeaderCascadingSectionResizes">
-                <bool>true</bool>
-               </attribute>
-               <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>47</number>
-               </attribute>
-               <column>
-                <property name="text">
-                 <string>Items</string>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MS Shell Dlg 2</family>
-                  <pointsize>7</pointsize>
-                 </font>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Values</string>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MS Shell Dlg 2</family>
-                  <pointsize>7</pointsize>
-                 </font>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Result</string>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>7</pointsize>
-                 </font>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>LSL</string>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MS Shell Dlg 2</family>
-                  <pointsize>7</pointsize>
-                 </font>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>USL</string>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MS Shell Dlg 2</family>
-                  <pointsize>7</pointsize>
-                 </font>
-                </property>
-               </column>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="serialTab">
-            <attribute name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/blueIcon/assets/icons/blue/minimize-2.svg</normaloff>:/blueIcon/assets/icons/blue/minimize-2.svg</iconset>
-            </attribute>
-            <attribute name="title">
-             <string>Serial Log</string>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_15">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QTextBrowser" name="serial_textBrowser"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="stageTab">
-            <attribute name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/blueIcon/assets/icons/blue/chevrons-right.svg</normaloff>:/blueIcon/assets/icons/blue/chevrons-right.svg</iconset>
-            </attribute>
-            <attribute name="title">
-             <string>Stage Log</string>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QTextBrowser" name="state_textBrowser">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
+               <property name="rightMargin">
+                <number>0</number>
                </property>
-               <property name="minimumSize">
-                <size>
-                 <width>150</width>
-                 <height>200</height>
-                </size>
+               <property name="bottomMargin">
+                <number>0</number>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>250</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+               <item alignment="Qt::AlignLeft">
+                <widget class="QLabel" name="logLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Test values</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <property name="indent">
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTabWidget" name="logViewTabWidget">
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="tabPosition">
+                  <enum>QTabWidget::West</enum>
+                 </property>
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="testResultTab">
+                  <attribute name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/blueIcon/assets/icons/blue/grid.svg</normaloff>:/blueIcon/assets/icons/blue/grid.svg</iconset>
+                  </attribute>
+                  <attribute name="title">
+                   <string>Test Result</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QTableWidget" name="tableWidget">
+                     <property name="font">
+                      <font>
+                       <family>Arial</family>
+                       <pointsize>6</pointsize>
+                      </font>
+                     </property>
+                     <property name="alternatingRowColors">
+                      <bool>false</bool>
+                     </property>
+                     <property name="columnCount">
+                      <number>5</number>
+                     </property>
+                     <attribute name="horizontalHeaderCascadingSectionResizes">
+                      <bool>true</bool>
+                     </attribute>
+                     <attribute name="horizontalHeaderDefaultSectionSize">
+                      <number>47</number>
+                     </attribute>
+                     <column>
+                      <property name="text">
+                       <string>Items</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>MS Shell Dlg 2</family>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Values</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>MS Shell Dlg 2</family>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>Result</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>LSL</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>MS Shell Dlg 2</family>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text">
+                       <string>USL</string>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>MS Shell Dlg 2</family>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                     </column>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="serialTab">
+                  <attribute name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/blueIcon/assets/icons/blue/minimize-2.svg</normaloff>:/blueIcon/assets/icons/blue/minimize-2.svg</iconset>
+                  </attribute>
+                  <attribute name="title">
+                   <string>Serial Log</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_15">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QTextBrowser" name="serial_textBrowser"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="stageTab">
+                  <attribute name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/blueIcon/assets/icons/blue/chevrons-right.svg</normaloff>:/blueIcon/assets/icons/blue/chevrons-right.svg</iconset>
+                  </attribute>
+                  <attribute name="title">
+                   <string>Stage Log</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_14">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QTextBrowser" name="state_textBrowser">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>200</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>250</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="dutImageLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <widget class="QFrame" name="imageFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>200</height>
-            </size>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="scaledContents">
-            <bool>false</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item alignment="Qt::AlignLeft">
+             <widget class="QPushButton" name="viewHideBtn">
+              <property name="minimumSize">
+               <size>
+                <width>80</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>28</height>
+               </size>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Images</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/whiteIcon/assets/icons/white/image.svg</normaloff>:/whiteIcon/assets/icons/white/image.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>15</width>
+                <height>15</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="dutImageLabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>200</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -675,6 +842,14 @@ QTabBar::tab:selected {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomSlideMenu</class>
+   <extends>QWidget</extends>
+   <header location="global">Custom_Widgets.QCustomSlideMenu.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>

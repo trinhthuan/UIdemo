@@ -19,6 +19,8 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QHeaderView, QLabel, QPushButton, QSizePolicy,
     QTabWidget, QTableWidget, QTableWidgetItem, QTextBrowser,
     QVBoxLayout, QWidget)
+
+from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
 import resources_rc
 
 class Ui_Form(object):
@@ -35,9 +37,6 @@ class Ui_Form(object):
 "	background-color: #EBF7FB;\n"
 "}\n"
 "\n"
-"#logViewTabWidget{\n"
-"	background-color: #000;\n"
-"}\n"
 "\n"
 "\n"
 "#frame, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6{\n"
@@ -51,8 +50,12 @@ class Ui_Form(object):
 "#viewResultFrame{\n"
 "	border: 2px solid #D5EEF7;\n"
 "	border-radius: 10px;\n"
-"	background-color: #fff;\n"
+"	background-color:#ebf7fb;\n"
 "\n"
+"}\n"
+"\n"
+"#imageFrame, #logFrame{\n"
+"	background-color: #rgb(235, 247, 251);\n"
 "}\n"
 "\n"
 "#dutNameLabel{\n"
@@ -73,14 +76,14 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "QTabWidget::pane {\n"
-"    /*border: 1px solid #26eaff;*/\n"
-"    background: #ebf7"
-                        "fb;\n"
+"    /*border: 1px solid #26eaff;*"
+                        "/\n"
+"    background-color: #ebf7fb;\n"
 "	color: rgb(235, 247, 251);\n"
 "}\n"
 "\n"
 "QTabBar::tab {\n"
-"    background: #e0e0e0;\n"
+"    background-color: #e0e0e0;\n"
 "   /* border: 1px solid #26eaff;*/\n"
 "    border-top-left-radius: 8px;\n"
 "    padding: 3px ;\n"
@@ -94,6 +97,20 @@ class Ui_Form(object):
 "#tableWidget{\n"
 "	background-color: #fff;\n"
 "	border-radius: 10px;\n"
+"}\n"
+"\n"
+"#viewHideBtn, #logLabel{\n"
+"	background-color: #2596bf;\n"
+"	color: #fff;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #fff;    /* Darker border on hover */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border: 2px solid #2980b9;    /* Darker border on hover */\n"
 "}\n"
 "\n"
 "\n"
@@ -139,11 +156,6 @@ class Ui_Form(object):
 
         self.verticalLayout_7.addWidget(self.dutStatusLabel, 0, Qt.AlignTop)
 
-        self.btn_start = QPushButton(self.inspData)
-        self.btn_start.setObjectName(u"btn_start")
-
-        self.verticalLayout_7.addWidget(self.btn_start)
-
         self.inspDetailFrame = QFrame(self.inspData)
         self.inspDetailFrame.setObjectName(u"inspDetailFrame")
         self.inspDetailFrame.setFrameShape(QFrame.StyledPanel)
@@ -152,24 +164,32 @@ class Ui_Form(object):
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.resultLabel = QLabel(self.inspDetailFrame)
-        self.resultLabel.setObjectName(u"resultLabel")
+        self.frame_6 = QFrame(self.inspDetailFrame)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.HLine)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_2.addWidget(self.frame_6, 5, 1, 1, 1)
+
+        self.rateLabel = QLabel(self.inspDetailFrame)
+        self.rateLabel.setObjectName(u"rateLabel")
         font1 = QFont()
         font1.setBold(True)
+        self.rateLabel.setFont(font1)
+        self.rateLabel.setAlignment(Qt.AlignCenter)
+        self.rateLabel.setMargin(2)
+        self.rateLabel.setIndent(1)
+
+        self.gridLayout_2.addWidget(self.rateLabel, 4, 1, 1, 1)
+
+        self.resultLabel = QLabel(self.inspDetailFrame)
+        self.resultLabel.setObjectName(u"resultLabel")
         self.resultLabel.setFont(font1)
         self.resultLabel.setAlignment(Qt.AlignCenter)
         self.resultLabel.setMargin(2)
         self.resultLabel.setIndent(1)
 
         self.gridLayout_2.addWidget(self.resultLabel, 0, 1, 1, 1)
-
-        self.label_10 = QLabel(self.inspDetailFrame)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(200, 16777215))
-        self.label_10.setMargin(2)
-        self.label_10.setIndent(1)
-
-        self.gridLayout_2.addWidget(self.label_10, 4, 0, 1, 1)
 
         self.frame_3 = QFrame(self.inspDetailFrame)
         self.frame_3.setObjectName(u"frame_3")
@@ -178,14 +198,20 @@ class Ui_Form(object):
 
         self.gridLayout_2.addWidget(self.frame_3, 3, 0, 1, 1)
 
-        self.rateLabel = QLabel(self.inspDetailFrame)
-        self.rateLabel.setObjectName(u"rateLabel")
-        self.rateLabel.setFont(font1)
-        self.rateLabel.setAlignment(Qt.AlignCenter)
-        self.rateLabel.setMargin(2)
-        self.rateLabel.setIndent(1)
+        self.label_6 = QLabel(self.inspDetailFrame)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(200, 16777215))
+        self.label_6.setMargin(2)
+        self.label_6.setIndent(1)
 
-        self.gridLayout_2.addWidget(self.rateLabel, 4, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_6, 0, 0, 1, 1)
+
+        self.frame_5 = QFrame(self.inspDetailFrame)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.HLine)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_2.addWidget(self.frame_5, 5, 0, 1, 1)
 
         self.frame = QFrame(self.inspDetailFrame)
         self.frame.setObjectName(u"frame")
@@ -199,13 +225,6 @@ class Ui_Form(object):
 
         self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
 
-        self.frame_2 = QFrame(self.inspDetailFrame)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.HLine)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-
-        self.gridLayout_2.addWidget(self.frame_2, 1, 1, 1, 1)
-
         self.tTimeLabel = QLabel(self.inspDetailFrame)
         self.tTimeLabel.setObjectName(u"tTimeLabel")
         self.tTimeLabel.setFont(font1)
@@ -215,20 +234,13 @@ class Ui_Form(object):
 
         self.gridLayout_2.addWidget(self.tTimeLabel, 2, 1, 1, 1)
 
-        self.frame_4 = QFrame(self.inspDetailFrame)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.HLine)
-        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.label_10 = QLabel(self.inspDetailFrame)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(200, 16777215))
+        self.label_10.setMargin(2)
+        self.label_10.setIndent(1)
 
-        self.gridLayout_2.addWidget(self.frame_4, 3, 1, 1, 1)
-
-        self.label_6 = QLabel(self.inspDetailFrame)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMaximumSize(QSize(200, 16777215))
-        self.label_6.setMargin(2)
-        self.label_6.setIndent(1)
-
-        self.gridLayout_2.addWidget(self.label_6, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_10, 4, 0, 1, 1)
 
         self.label_8 = QLabel(self.inspDetailFrame)
         self.label_8.setObjectName(u"label_8")
@@ -238,22 +250,22 @@ class Ui_Form(object):
 
         self.gridLayout_2.addWidget(self.label_8, 2, 0, 1, 1)
 
-        self.frame_5 = QFrame(self.inspDetailFrame)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.HLine)
-        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.frame_2 = QFrame(self.inspDetailFrame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.HLine)
+        self.frame_2.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_2.addWidget(self.frame_5, 5, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_2, 1, 1, 1, 1)
 
-        self.frame_6 = QFrame(self.inspDetailFrame)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.HLine)
-        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.frame_4 = QFrame(self.inspDetailFrame)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.HLine)
+        self.frame_4.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_2.addWidget(self.frame_6, 5, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_4, 3, 1, 1, 1)
 
 
-        self.verticalLayout_7.addWidget(self.inspDetailFrame, 0, Qt.AlignTop)
+        self.verticalLayout_7.addWidget(self.inspDetailFrame)
 
 
         self.verticalLayout.addWidget(self.inspData)
@@ -266,7 +278,38 @@ class Ui_Form(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.logViewTabWidget = QTabWidget(self.viewResultFrame)
+        self.logViewHide = QCustomSlideMenu(self.viewResultFrame)
+        self.logViewHide.setObjectName(u"logViewHide")
+        self.verticalLayout_5 = QVBoxLayout(self.logViewHide)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.logFrame = QFrame(self.logViewHide)
+        self.logFrame.setObjectName(u"logFrame")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.logFrame.sizePolicy().hasHeightForWidth())
+        self.logFrame.setSizePolicy(sizePolicy1)
+        self.logFrame.setMinimumSize(QSize(250, 0))
+        self.logFrame.setMaximumSize(QSize(250, 16777215))
+        self.logFrame.setFrameShape(QFrame.StyledPanel)
+        self.logFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.logFrame)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.logLabel = QLabel(self.logFrame)
+        self.logLabel.setObjectName(u"logLabel")
+        self.logLabel.setMinimumSize(QSize(80, 20))
+        self.logLabel.setMaximumSize(QSize(80, 20))
+        self.logLabel.setAlignment(Qt.AlignCenter)
+        self.logLabel.setMargin(0)
+        self.logLabel.setIndent(1)
+
+        self.verticalLayout_4.addWidget(self.logLabel, 0, Qt.AlignLeft)
+
+        self.logViewTabWidget = QTabWidget(self.logFrame)
         self.logViewTabWidget.setObjectName(u"logViewTabWidget")
         self.logViewTabWidget.setMaximumSize(QSize(250, 16777215))
         self.logViewTabWidget.setTabPosition(QTabWidget.West)
@@ -336,9 +379,6 @@ class Ui_Form(object):
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.state_textBrowser = QTextBrowser(self.stageTab)
         self.state_textBrowser.setObjectName(u"state_textBrowser")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.state_textBrowser.sizePolicy().hasHeightForWidth())
         self.state_textBrowser.setSizePolicy(sizePolicy1)
         self.state_textBrowser.setMinimumSize(QSize(150, 200))
@@ -350,9 +390,37 @@ class Ui_Form(object):
         icon2.addFile(u":/blueIcon/assets/icons/blue/chevrons-right.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.logViewTabWidget.addTab(self.stageTab, icon2, "")
 
-        self.horizontalLayout.addWidget(self.logViewTabWidget, 0, Qt.AlignLeft)
+        self.verticalLayout_4.addWidget(self.logViewTabWidget)
 
-        self.dutImageLabel = QLabel(self.viewResultFrame)
+
+        self.verticalLayout_5.addWidget(self.logFrame)
+
+
+        self.horizontalLayout.addWidget(self.logViewHide, 0, Qt.AlignLeft)
+
+        self.imageFrame = QFrame(self.viewResultFrame)
+        self.imageFrame.setObjectName(u"imageFrame")
+        self.imageFrame.setFrameShape(QFrame.StyledPanel)
+        self.imageFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.imageFrame)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.viewHideBtn = QPushButton(self.imageFrame)
+        self.viewHideBtn.setObjectName(u"viewHideBtn")
+        self.viewHideBtn.setMinimumSize(QSize(80, 28))
+        self.viewHideBtn.setMaximumSize(QSize(80, 28))
+        self.viewHideBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.viewHideBtn.setLayoutDirection(Qt.LeftToRight)
+        self.viewHideBtn.setAutoFillBackground(False)
+        icon3 = QIcon()
+        icon3.addFile(u":/whiteIcon/assets/icons/white/image.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.viewHideBtn.setIcon(icon3)
+        self.viewHideBtn.setIconSize(QSize(15, 15))
+
+        self.verticalLayout_3.addWidget(self.viewHideBtn, 0, Qt.AlignLeft)
+
+        self.dutImageLabel = QLabel(self.imageFrame)
         self.dutImageLabel.setObjectName(u"dutImageLabel")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy2.setHorizontalStretch(0)
@@ -364,7 +432,10 @@ class Ui_Form(object):
         self.dutImageLabel.setScaledContents(False)
         self.dutImageLabel.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout.addWidget(self.dutImageLabel)
+        self.verticalLayout_3.addWidget(self.dutImageLabel)
+
+
+        self.horizontalLayout.addWidget(self.imageFrame)
 
 
         self.verticalLayout.addWidget(self.viewResultFrame)
@@ -385,13 +456,13 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.dutNameLabel.setText(QCoreApplication.translate("Form", u"DUT Name", None))
         self.dutStatusLabel.setText(QCoreApplication.translate("Form", u"Status: Idle", None))
-        self.btn_start.setText(QCoreApplication.translate("Form", u"PushButton", None))
-        self.resultLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
-        self.label_10.setText(QCoreApplication.translate("Form", u"\u2022 Fail rate", None))
         self.rateLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
-        self.tTimeLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
+        self.resultLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"\u2022 Result", None))
+        self.tTimeLabel.setText(QCoreApplication.translate("Form", u"TextLabel", None))
+        self.label_10.setText(QCoreApplication.translate("Form", u"\u2022 Fail rate", None))
         self.label_8.setText(QCoreApplication.translate("Form", u"\u2022 Test time", None))
+        self.logLabel.setText(QCoreApplication.translate("Form", u"Test values", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Items", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -405,6 +476,7 @@ class Ui_Form(object):
         self.logViewTabWidget.setTabText(self.logViewTabWidget.indexOf(self.testResultTab), QCoreApplication.translate("Form", u"Test Result", None))
         self.logViewTabWidget.setTabText(self.logViewTabWidget.indexOf(self.serialTab), QCoreApplication.translate("Form", u"Serial Log", None))
         self.logViewTabWidget.setTabText(self.logViewTabWidget.indexOf(self.stageTab), QCoreApplication.translate("Form", u"Stage Log", None))
+        self.viewHideBtn.setText(QCoreApplication.translate("Form", u"Images", None))
         self.dutImageLabel.setText("")
     # retranslateUi
 

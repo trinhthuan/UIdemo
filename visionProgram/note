@@ -1,6 +1,8 @@
 '''
 cd D:\Python\GiaoDienSample\visionProgram
-pyside6-uic interface.ui -o interface_ui.py
+
+pyside6-uic .\my_dut_widget.ui -o .\my_ui_dut_widget.py
+
 pyside6-rcc resources.qrc -o resources_rc.py
 
 ##QCustom

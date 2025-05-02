@@ -27,6 +27,7 @@ if __name__ == "__main__":
 (.venv) PS D:\Python\GiaoDienSample\dashboard> pyside6-rcc resources.qrc -o resources_rc.py
 
 ##QCustom
+pip install QT-PyQt-PySide-Custom-Widgets
 https://pypi.org/project/QT-PyQt-PySide-Custom-Widgets/
 
 ##JSON Style

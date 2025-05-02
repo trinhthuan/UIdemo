@@ -1,0 +1,45 @@
+{
+
+"QCustomSlideMenu": [
+  {
+    "name": "logViewHide",
+    "defaultSize": [
+      {
+        "width": 250,
+        "height": "parent"
+      }
+    ],
+    "collapsedSize": [
+      {
+        "width": 0,
+        "height": "parent"
+      }
+    ],
+    "expandedSize": [
+      {
+        "width": 250,
+        "height": "parent"
+      }
+    ],
+    "toggleButton": [
+      {
+        "buttonName": "viewHideBtn",
+        "icons": [
+          {
+             "whenMenuIsCollapsed": ":/whiteIcon/assets/icons/white/chevrons-right.svg",
+             "whenMenuIsExpanded": "D:\\Python\\GiaoDienSample\\dashboard\\assets\\icons\\whiteIcon\\chevrons-left.svg"
+          }
+        ]
+      }
+    ],
+    "menuTransitionAnimation": [
+      {
+        "animationDuration": 1000,
+        "animationEasingCurve": "OutBack"
+      }
+    ]
+
+  }
+]
+
+}

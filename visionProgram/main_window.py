@@ -92,8 +92,8 @@ class MainWindow(QMainWindow):
         for i in range(self.num_duts):
             dut_widget = DUTWidget(f"DUT_{i}", i)
             self.dut_widgets.append(dut_widget)
-            row = i // 2
-            col = i % 2
+            row = i // 2  #Chia lấy nguyên
+            col = i % 2   #Chia lấy dư
             self.ui.dutGridLayout.addWidget(dut_widget, row, col)
 
     def save_config(self):
