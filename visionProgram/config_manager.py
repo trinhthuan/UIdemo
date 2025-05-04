@@ -6,9 +6,13 @@ class ConfigManager:
     def __init__(self,  config_file="config.json"):
         self.config_file = config_file
         self.config = {
+            "num_duts": "",
             "model_file": "",
             "feature_file": "",
-            "serial_port": ""
+            "serial_port": "",
+            "exposure_val": "",
+            "lightLevel_val": ""
+
         }
         self.load_config()
 
@@ -41,3 +45,4 @@ class ConfigManager:
 
     def set(self, key, value):
         self.config[key] = value
+        self.save_config()

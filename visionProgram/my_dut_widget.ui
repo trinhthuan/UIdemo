@@ -26,11 +26,10 @@
 
 
 #frame, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6{
-    background-color: rgba(38, 200, 255, 80); /* màu đen mờ (opacity 50/255) */
+    background-color: rgba(38, 200, 255, 80); /* màu đen mờ (opacity 80/255) */
     max-height: 1px;   /* chỉ dày 1 pixel */
     min-height: 1px;
     border: none;
-
 }
 
 #viewResultFrame{
@@ -770,13 +769,13 @@ QPushButton:pressed {
               <property name="minimumSize">
                <size>
                 <width>80</width>
-                <height>28</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>80</width>
-                <height>28</height>
+                <height>20</height>
                </size>
               </property>
               <property name="cursor">

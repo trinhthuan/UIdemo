@@ -1,3 +1,9 @@
 {
-    "num_duts": 2
+    "num_duts": 1,
+    "model_file": "D:/Python/GiaoDienSample/visionProgram/__pycache__",
+    "feature_file": "D:/Python/GiaoDienSample/visionProgram/__pycache__/camera_control.cpython-311.pyc",
+    "serial_port": "",
+    "exposure_val": 194,
+    "lightLevel_val": 5,
+    "light_level": 4
 }

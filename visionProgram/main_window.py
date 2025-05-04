@@ -12,18 +12,9 @@ from config_manager import ConfigManager
 from serial_port import SerialPort
 import socket
 
-CONFIG_FILE = "config.json"
+from dino_control import DinoControl, LightControl
 
-def load_config():
-    if os.path.exists(CONFIG_FILE):
-        with open(CONFIG_FILE, "r") as f:
-            config = json.load(f)
-            return config.get("num_duts", 4)
-    return 4
 
-def save_config(num_duts):
-    with open(CONFIG_FILE, "w") as f:
-        json.dump({"num_duts": num_duts}, f, indent=4)
 def get_local_ip():
     try:
         # Tạo socket tạm để lấy IP
@@ -41,10 +32,11 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-
-        self.num_duts = load_config()
-
+        #Load configs
         self.config = ConfigManager()
+        self.config_data = self.config.config
+
+        self.num_duts = self.config.get("num_duts") or 1
 
         self.dut_widgets = []
         # Initialize DUTs
@@ -56,10 +48,12 @@ class MainWindow(QMainWindow):
         self.ui.settingTabBtn.clicked.connect(self.switch_to_tab_setting)
         self.ui.saveConfigBtn.clicked.connect(self.save_config)
         self.ui.restartBtn.clicked.connect(self.restart_app)
+        self.ui.exposSaveBtn.clicked.connect(lambda: self.set_config("exposure_val", int(self.ui.exposureValLabel.text())))
+        self.ui.lightSaveBtn.clicked.connect(lambda: self.set_config("lightLevel_val", int(self.ui.lightLevelLabel.text())))
 
-        # Connect button
+
         self.ui.manualBtn.clicked.connect(self.start_all_duts)
-        self.ui.uploadBtn.clicked.connect(self.stop_all_duts)
+        self.ui.stopBtn.clicked.connect(self.stop_all_duts)
 
         ip_address = get_local_ip()
         self.ui.ipInfo.setText(f"• IP: {ip_address}")
@@ -68,8 +62,47 @@ class MainWindow(QMainWindow):
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)  # 1000 ms = 1 giây
-
         self.update_time()  # cập nhật ngay lúc khởi động
+
+        # Tab data, load file
+        self.ui.selectModelBtn.clicked.connect(self.select_folder)
+        self.ui.selectFeatureBtn.clicked.connect(self.select_file)
+        self.ui.comboBox.currentTextChanged.connect(self.save_selected_option)
+
+        self.ui.dutNumber.setText(str(self.config.get("num_duts")))
+        self.folder_mdl_path = self.config.get("model_file")  # Biến lưu path folder được chọn
+        self.ui.modelFileLine.setText(self.folder_mdl_path)
+        self.file_feature_path = self.config.get("feature_file")  # Biến lưu path file được chọn
+        self.ui.fetureFileLine.setText(self.file_feature_path)
+        self.comport = self.config.get("serial_port")
+        self.ui.comboBox.setCurrentText(self.comport)
+
+        #Slider control
+        self.ui.exposureSlider.setMinimum(0)
+        self.ui.exposureSlider.setMaximum(1000)
+        self.ui.exposureSlider.setValue(int(self.config.get("exposure_val") or 0))
+        self.ui.exposureValLabel.setText(str(self.config.get("exposure_val") or 0))
+        self.ui.exposureSlider.valueChanged.connect(self.on_slider_val_changed)
+
+        self.ui.lightLevelSlider.setMinimum(0)
+        self.ui.lightLevelSlider.setMaximum(10)
+        self.ui.lightLevelSlider.setValue(int(self.config.get("lightLevel_val") or 0))
+        self.ui.lightLevelLabel.setText(str(self.config.get("lightLevel_val") or 0))
+        self.ui.lightLevelSlider.valueChanged.connect(self.on_light_val_changed)
+
+        self.dino_camera = DinoControl()
+        self.light_control = LightControl()
+
+    def set_config(self, key, val):
+        self.config.set(key, val)
+    def on_slider_val_changed(self, val):
+        self.ui.exposureValLabel.setText(f"{val}")
+        self.dino_camera.set_exposure(val)  # Điều khiển DinoLite
+
+    def on_light_val_changed(self, value):
+        self.ui.lightLevelLabel.setText(f"{value}")
+        self.light_control.set_light_level(value)
+
 
     def update_time(self):
         current_time = QTime.currentTime().toString("hh:mm:ss")
@@ -97,14 +130,17 @@ class MainWindow(QMainWindow):
             self.ui.dutGridLayout.addWidget(dut_widget, row, col)
 
     def save_config(self):
+        #Save DUT number
         try:
             new_num = int(self.ui.dutNumber.text())
             if new_num < 1:
                 raise ValueError
-            save_config(new_num)
-            QMessageBox.information(self, "Saved", "Config saved! Press 'Restart App' to apply changes.")
+            self.config.set("num_duts", new_num)
+            QMessageBox.information(self, "Saved", "Config saved!")
         except ValueError:
             QMessageBox.warning(self, "Error", "Please enter a valid number (>0)!")
+
+
 
     def restart_app(self):
         # Ghi config trước khi restart
